@@ -26,14 +26,14 @@ calificacion = (+10) . length . filter esMinuscula
 
 -- Version usando mayor composicion
 calificacion' :: Cancion -> Number
-calificacion' = (+10) . length . filter (`elem` ['a'..'z'])
+calificacion' = (+10) . length . filter (`elem` (['a'..'z']++"áéíóú"))
 
 -- Version usando mayor composicion (mas reducida aun)
 calificacion'' :: Cancion -> Number
 calificacion'' = (+10) . length . filter isLower
 
 esMinuscula :: Char -> Bool
-esMinuscula letra = letra `elem` ['a'..'z']
+esMinuscula letra = letra `elem` (['a'..'z']++"áéíóú")
 
 esMinuscula'' :: Char -> Bool
 esMinuscula'' = isLower 
